@@ -2,12 +2,17 @@
 var headStickman = new Array("./IMG/AIR_stickman.png","./IMG/EARTH_stickman.png","./IMG/FIRE_stickman.png","./IMG/WATER_stickman.png");
 //enemyElement.src = 
 //var randomNum = Math.floor()
+var elementChance = 4;
+var headEnemy = 1;
+headEnemy.src="/IMG/FIRE_stickman.png";
 var enemyStickman = new Image();
 enemyStickman.src="./IMG/REGULAR_stickman.png";
 var playerStickman = new Image();
  playerStickman.src="./IMG/REGULAR_stickman.png";
  var playerFace = new Image();
  playerFace.src="./IMG/EMPTY_stickman.png";
+ var enemyFace = new Image();
+ enemyFace.src ="./IMG/FIRE_stickman.png";
  
  var canvas = document.getElementById("game");
  var context = canvas.getContext("2d");
@@ -53,10 +58,60 @@ function earthButtonDown()
     playerFace.src="./IMG/EARTH_stickman.png";
 }
 
+function fireEnemy()
+{
+    enemyFace.src="./IMG/FIRE_stickman.png";
+    
+    console.log("fire");
+}
+
+function airEnemy()
+{
+    enemyFace.src="./IMG/AIR_stickman.png";
+    
+    console.log("air");
+}
+
+function waterEnemy()
+{
+    enemyFace.src="./IMG/WATER_stickman.png";
+    
+    console.log("water");
+}
+
+function earthEnemy()
+{
+    enemyFace.src="./IMG/EARTH_stickman.png";
+    
+    console.log("earth");
+}
+
+function getRandomInt(elementChance) 
+{
+    return Math.floor(Math.random() * Math.floor(elementChance));
+}
+
 function enemyElement()
 {
-var randomNum = Math.floor(Math.random() * headStickman.length);
-document.getElementById("enemyHead").src = headStickman[randomNum];
+ var randomElement = getRandomInt(elementChance);
+        
+        if (randomElement == 0) 
+        {
+            fireEnemy();
+        }
+        if (randomElement == 1) 
+        {
+            airEnemy();
+        }
+        if (randomElement == 2) 
+        {
+            waterEnemy();
+        }
+        if (randomElement == 3) 
+        {
+            earthEnemy();
+        }
+        
 }
 
 function update()
@@ -70,9 +125,12 @@ function draw()
 {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(playerStickman,240,100);
-    context.drawImage(enemyStickman,1280,100)
+    context.drawImage(enemyStickman,1280,100);
     context.drawImage(playerFace,240,100);
-    context.drawImage(headStickman,1280,100);
+    
+    context.drawImage(enemyFace,1280,100);
+    
+    //context.drawImage(enemyHead,1280,100);
     
     
     //fire element
@@ -126,6 +184,7 @@ function draw()
 //gameplay loop
 function gameloop()
 {
+    
     update();
     //enemyElement();
     draw();
