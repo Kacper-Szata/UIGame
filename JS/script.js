@@ -1,3 +1,7 @@
+
+var headStickman = new Array("./IMG/AIR_stickman.png","./IMG/EARTH_stickman.png","./IMG/FIRE_stickman.png","./IMG/WATER_stickman.png");
+//enemyElement.src = 
+//var randomNum = Math.floor()
 var enemyStickman = new Image();
 enemyStickman.src="./IMG/REGULAR_stickman.png";
 var playerStickman = new Image();
@@ -49,6 +53,11 @@ function earthButtonDown()
     playerFace.src="./IMG/EARTH_stickman.png";
 }
 
+function enemyElement()
+{
+var randomNum = Math.floor(Math.random() * headStickman.length);
+document.getElementById("enemyHead").src = headStickman[randomNum];
+}
 
 function update()
 {
@@ -63,6 +72,9 @@ function draw()
     context.drawImage(playerStickman,240,100);
     context.drawImage(enemyStickman,1280,100)
     context.drawImage(playerFace,240,100);
+    context.drawImage(headStickman,1280,100);
+    
+    
     //fire element
     //context.beginPath();
     //context.arc(200, 785, 40, 0, 2 * Math.PI);
@@ -107,17 +119,17 @@ function draw()
     context.stroke();
     context.lineWidth = 10;
     context.closePath();
-   
-
+   //enemyElement;
+    //window.onload = enemyElement;
 }
 
 //gameplay loop
 function gameloop()
 {
     update();
+    //enemyElement();
     draw();
     window.requestAnimationFrame(gameloop);
 }
 // Handle Active Browser Tag Animation
 window.requestAnimationFrame(gameloop);
-
