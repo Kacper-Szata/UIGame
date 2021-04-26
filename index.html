@@ -14,43 +14,18 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 
 </head>
-<!-- when html is ready you load the script, because sometimes javascript loads before html and this prevents it-->
 <body onload="pageLoaded()">
-    <canvas tabindex="1" id="game" width="1900" height="850" style="border: black 1px solid;">
-       Oops! looks like your browser does not support canvas tag
-    
-       <h1>Elemental Wars</h1>
-       <!--  <p id="countdown"></p> -->
-    </canvas>
-   
-     <p id="countdown"></p> 
-    
-    <table>
-        <tbody>
-            
-                <td>&nbsp;</td>
-                <td><button id="FIRE" class="button yellow round">FIRE</button></td>
-                <td>&nbsp;</td>
-            
-            
-                <td><button id="AIR" class="button blue round">AIR</button></td>
-                <td>&nbsp;</td>
-                <td><button id="WATER" class="button red round">WATER</button></td>
-            
-            
-                <td>&nbsp;</td>
-                <td><button id="EARTH" class="button green round">EARTH</button></td>
-                <td>&nbsp;</td>
+    <div class="elementalTitle"> 
+    <h1>ELEMENTAL WARS</h1>
+    </div>
+    <button class="startGame" onclick='window.location.href = "gamePlay.html"'>
+        Start Game
+    </button>
+     
 
-                <td>&nbsp;</td>
-                <td><button id="RESTART" class="button green round">Restart</button></td>
-                <td>&nbsp;</td>
-            
-        </tbody>
-    
 </body>
 
     <!--JavaScript File-->
     <script src="./JS/script.js"></script>
-
+    
 </html>
