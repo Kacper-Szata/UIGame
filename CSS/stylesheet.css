@@ -32,12 +32,12 @@ p
 
 .button:hover 
 {
-    background-color:red;
+    background-color:rgb(112, 112, 112);
 }
 
 .button:active 
 {
-    box-shadow: 0 5px green;
+    box-shadow: 0 5px rgb(58, 58, 58);
     transform: translateY(5px);
 }
 
@@ -59,6 +59,11 @@ p
 .yellow 
 {
     color: #FFFF00;
+}
+
+.cyan
+{
+    color:rgb(39, 225, 238);
 }
 
 .round 
